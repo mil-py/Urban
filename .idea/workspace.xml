@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe8f2622-6c96-47c0-b064-534c55dbe6cd" name="Changes" comment="" />
+    <list default="true" id="fe8f2622-6c96-47c0-b064-534c55dbe6cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/2-1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2-2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +40,10 @@
     "Python.1-3.executor": "Run",
     "Python.1-5.executor": "Run",
     "Python.1-6.executor": "Run",
+    "Python.2-1.executor": "Debug",
+    "Python.2-2.executor": "Run",
     "Python.dict_set.executor": "Run",
-    "Python.test.executor": "Run",
+    "Python.test.executor": "Debug",
     "Python.test1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
@@ -79,5 +85,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/2-1.py</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test.py</url>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
