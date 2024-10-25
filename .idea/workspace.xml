@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe8f2622-6c96-47c0-b064-534c55dbe6cd" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/2-4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2-5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +46,8 @@
     "Python.2-1.executor": "Debug",
     "Python.2-2.executor": "Run",
     "Python.2-4.executor": "Run",
+    "Python.2-5.executor": "Run",
+    "Python.2-5func.executor": "Run",
     "Python.dict_set.executor": "Run",
     "Python.test.executor": "Run",
     "Python.test1.executor": "Run",
