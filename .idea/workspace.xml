@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe8f2622-6c96-47c0-b064-534c55dbe6cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/2-3.py" beforeDir="false" afterPath="$PROJECT_DIR$/2-3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2-4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -40,6 +44,7 @@
     "Python.1-6.executor": "Run",
     "Python.2-1.executor": "Debug",
     "Python.2-2.executor": "Run",
+    "Python.2-4.executor": "Run",
     "Python.dict_set.executor": "Run",
     "Python.test.executor": "Run",
     "Python.test1.executor": "Run",
