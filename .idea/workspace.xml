@@ -48,6 +48,7 @@
     "Python.2-4.executor": "Run",
     "Python.2-5.executor": "Run",
     "Python.2-5func.executor": "Run",
+    "Python.2-6_additional.executor": "Run",
     "Python.dict_set.executor": "Run",
     "Python.test.executor": "Run",
     "Python.test1.executor": "Run",
