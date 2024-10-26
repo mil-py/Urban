@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe8f2622-6c96-47c0-b064-534c55dbe6cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/2-4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2-5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xxx000.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,29 +35,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1-1.executor": "Run",
-    "Python.1-2.executor": "Run",
-    "Python.1-3.executor": "Run",
-    "Python.1-5.executor": "Run",
-    "Python.1-6.executor": "Run",
-    "Python.2-1.executor": "Debug",
-    "Python.2-2.executor": "Run",
-    "Python.2-4.executor": "Run",
-    "Python.2-5.executor": "Run",
-    "Python.2-5func.executor": "Run",
-    "Python.2-6_additional.executor": "Run",
-    "Python.dict_set.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.test1.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/Python/Urban",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1-1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1-2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1-3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1-5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.1-6.executor&quot;: &quot;Run&quot;,
+    &quot;Python.2-1.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.2-2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.2-4.executor&quot;: &quot;Run&quot;,
+    &quot;Python.2-5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.2-5func.executor&quot;: &quot;Run&quot;,
+    &quot;Python.2-6_additional.executor&quot;: &quot;Run&quot;,
+    &quot;Python.dict_set.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.xxx000.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Python/Urban&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Python\Urban" />
