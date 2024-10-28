@@ -16,7 +16,6 @@ def is_contains(str, lst):
         if elem.upper() == str.upper():
             contains = True
             break
-
     return contains
 
 print(string_info('Krakozabra'))
