@@ -1,4 +1,4 @@
-def send_email(msg, rcp, *, sender ="university.help@gmail.com"):
+def send_email(msg, rcp, sender="university.help@gmail.com"):
     at_pos = rcp.find("@")
     right_domens = (
         (rcp.endswith(".com") or rcp.endswith(".ru") or rcp.endswith(".net")) 
