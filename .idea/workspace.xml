@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe8f2622-6c96-47c0-b064-534c55dbe6cd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/3-6_hard.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ex4_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fake_math_4_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/true_math_4_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +32,9 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2nQXBjmzXrKZvz7sJKJY9rgLQao" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,6 +60,7 @@
     "Python.3-6.executor": "Run",
     "Python.3-6_hard.executor": "Run",
     "Python.dict_set.executor": "Run",
+    "Python.ex4_1.executor": "Run",
     "Python.test.executor": "Run",
     "Python.test1.executor": "Run",
     "Python.test2.executor": "Run",
