@@ -4,10 +4,16 @@ import time
 class User:
     def __init__(self, nickname, passw, age):
         self.nickname = nickname
-        self.password = passw
+        self.password = hash(passw)
         self.age = age
-    def __repr__(self):
+
+    def __str__(self):
         return f"{self.nickname}"
+
+    def __eq__(self, other):
+        return ((isinstance(other, User) and
+                 self.nickname == other.nickname) and
+                self.password == hash(other.password))
 
 
 class Video:
@@ -20,6 +26,10 @@ class Video:
     def __str__(self):
         return self.title
 
+    def __eq__(self, other):
+        return ((isinstance(other, User) and
+                 self.title.lower().strip() == other.title.lower().strip()))
+
 
 class UrTube:
     def __init__(self, ):
@@ -27,18 +37,16 @@ class UrTube:
         self.videos = []
         self.current_user = None
 
-
-
     def log_in(self, nickname, password):
         for user in self.users:
             if nickname == user.nickname:
-                if password == user.password:
+                if hash(password) == user.password:
                     self.current_user = user
                     break
                 else:
-                    print("wrong pass")
+                    print("неверный пароль")
         if not self.current_user:
-            print("user not found")
+            print("пользователь не найден")
 
     def register(self, nickname, password, age):
         exist = False
@@ -58,7 +66,7 @@ class UrTube:
         for video in videos:
             exist = False
             for saved_video in self.videos:
-                if video.title == saved_video.title:
+                if video == saved_video:
                     exist = True
                     break
             if not exist:
@@ -76,10 +84,11 @@ class UrTube:
         for video in self.videos:
 
             if title.strip().lower() == str(video).lower().strip():
-
                 v = video
                 # print("found: ",v)
                 break
+        if not v:
+            return
 
         if not self.current_user:
             print("Войдите в аккаунт, чтобы смотреть видео")
@@ -89,7 +98,7 @@ class UrTube:
             return
         for t in range(v.duration):
             v.time_now = t
-            print(t,'', end='')
+            print(t, '', end='')
             time.sleep(1)
         print("Конец видео")
         v.time_now = 0
@@ -107,14 +116,13 @@ ur.add(v1, v2)
 
 # Проверка поиска
 
-# print(ur.get_videos('лучший'))
-#
-# print(ur.get_videos('ПРОГ'))
+print(ur.get_videos('лучший'))
 
+print(ur.get_videos('ПРОГ'))
 
 # Проверка на вход пользователя и возрастное ограничение
 
-#ur.watch_video('Для чего девушкам парень программист?')
+ur.watch_video('Для чего девушкам парень программист?')
 
 ur.register('vasya_pupkin', 'lolkekcheburek', 13)
 
@@ -124,14 +132,12 @@ ur.register('urban_pythonist', 'iScX4vIJClb9YQavjAgF', 25)
 
 ur.watch_video('Для чего девушкам парень программист?')
 
-
 # Проверка входа в другой аккаунт
 
 ur.register('vasya_pupkin', 'F8098FM8fjm9jmi', 55)
 
 print(ur.current_user)
 
-
 # Попытка воспроизведения несуществующего видео
 
-# ur.watch_video('Лучший язык программирования 2024 года!')
+ur.watch_video('Лучший язык программирования 2024 года!')
