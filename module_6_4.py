@@ -26,7 +26,6 @@ class Figure:
 
     def __is_valid_sides(self, sides):
         if len(sides) != self.sides_count:
-
             return False
         else:
             for s in sides:
