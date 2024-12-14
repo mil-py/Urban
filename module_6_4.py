@@ -6,7 +6,7 @@ class Figure:
         if self.__is_valid_color(r, g, b):
             self.__color = list(color)
         if self.__is_valid_sides(sides):
-            self.__sides = sides.copy()
+            self.__sides = list(sides).copy()
             self.sides_count = len(sides)
         self.filled = False
 
@@ -104,3 +104,6 @@ print(len(circle1))
 
 # Проверка объёма (куба):
 print(cube1.get_volume())
+
+tr = Triangle((99,99,99), (3,4,5))
+print(tr.get_square())
