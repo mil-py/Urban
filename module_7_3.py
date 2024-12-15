@@ -1,5 +1,3 @@
-import sys
-
 
 def str_clean(str_, nongrata):
     new_str = str_
