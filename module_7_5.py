@@ -1,7 +1,7 @@
 import os
 import time
 
-directory = os.getcwd()
+directory ='.'
 print(directory)
 
 for root, dirs, files in os.walk(directory):
