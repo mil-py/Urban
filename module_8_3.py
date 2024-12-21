@@ -37,15 +37,16 @@ class Car:
 
 class IncorrectVinNumber(Exception):
     def __init__(self, message):
-        super().__init__()
+        super().__init__(message)
         self.message = message
 
 
 class IncorrectCarNumbers(Exception):
     def __init__(self, message):
-        super().__init__()
+        super().__init__(message)
         self.message = message
 
+#---------------------------------------------------------------
 
 try:
     first = Car('Model1', 1000000, 'f123dj')
@@ -59,6 +60,7 @@ else:
 try:
     second = Car('Model2', 300, 'т001тр')
 except IncorrectVinNumber as exc:
+
     print(exc.message)
 except IncorrectCarNumbers as exc:
     print(exc.message)
