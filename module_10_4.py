@@ -40,9 +40,9 @@ class Cafe:
 
     def serve_guests(self):
 
-        while not self.q.empty() or len(list(filter(lambda table: table.guest, self.tables))) > 0:
+        while not self.q.empty() or len(list(filter(lambda table: table.guest is not None, self.tables))) > 0:
             for table in self.tables:
-                if table.guest and not table.guest.is_alive():
+                if table.guest is not None and not table.guest.is_alive():
                     print(f"{table.guest.name} покушал(-а) и ушёл(ушла)")
                     table.guest = None
                     print(f"Стол номер {table.number} свободен")
