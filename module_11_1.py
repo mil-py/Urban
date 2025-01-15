@@ -1,73 +1,30 @@
-import time
-import threading
-from random import randint
-import queue
+from datetime import datetime
+from multiprocessing import Pool
 
 
-class Table:
-    def __init__(self, number, guest=None):
-        self.number = number
-        self.guest = guest
+def read_info(name):
+    all_data = []
+    with open(name, encoding='UTF-8') as f:
+        while True:
+            content = f.readline()
+            if not content:
+                break
+            all_data += [content]
 
 
-class Guest(threading.Thread):
-    def __init__(self, name):
-        threading.Thread.__init__(self)
-        self.name = name
+files = ['file 1.txt', 'file 2.txt', 'file 3.txt', 'file 4.txt']
 
-    def run(self):
-        time.sleep(randint(3, 10))
+if __name__ == '__main__':
+    start = datetime.now()
+    # последовательный запуск:
 
+    # for f in files:
+    #     read_info(f)
 
-class Cafe:
-    def __init__(self, *tables):
-        self.tables = tables
-        self.q = queue.Queue()
+    # запуск 4 процессов параллельно:
 
-    def guest_arrival(self, *guests):
-        for guest in guests:
-            sited = False
-            for table in self.tables:
-                if table.guest == None:
-                    table.guest = guest
-                    sited = True
-                    guest.start()
-                    print(f"{guest.name} сел(-а) за стол номер {table.number}")
-                    break
-            if not sited:
-                self.q.put(guest)
-                print(f"{guest.name} в очереди")
+    with Pool(processes=4) as pool:
+        pool.map(read_info, files)
 
-    def serve_guests(self):
-
-        while not self.q.empty() or len(list(filter(lambda table: table.guest is not None, self.tables))) > 0:
-            for table in self.tables:
-                if table.guest is not None and not table.guest.is_alive():
-                    print(f"{table.guest.name} покушал(-а) и ушёл(ушла)")
-                    table.guest = None
-                    print(f"Стол номер {table.number} свободен")
-                    if not self.q.empty():
-                        table.guest = self.q.get()
-                        print(F"{table.guest.name} вышел(-ла) из очереди и сел(-а) за стол номер {table.number}")
-                        table.guest.start()
-
-
-# Создание столов
-tables = [Table(number) for number in range(1, 6)]
-
-# Имена гостей
-guests_names = [
-    'Maria', 'Oleg', 'Vakhtang', 'Sergey', 'Darya', 'Arman',
-    'Vitoria', 'Nikita', 'Galina', 'Pavel', 'Ilya', 'Alexandra']
-
-# Создание гостей
-guests = [Guest(name) for name in guests_names]
-
-# Заполнение кафе столами
-cafe = Cafe(*tables)
-
-# Приём гостей
-cafe.guest_arrival(*guests)
-
-# Обслуживание гостей
-cafe.serve_guests()
+    end = datetime.now()
+    print('время', end - start)
