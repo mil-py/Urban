@@ -1,30 +1,65 @@
-from datetime import datetime
-from multiprocessing import Pool
+'''
+программа выводит график курса рубля к доллару на FOREX за прошедшую неделю.
+Для получения данных через  API сервиса openexchangerates.org использован модуль requests.
+Для отображения графика - модуль matplotlib.pyplot
+'''
+
+import requests
+import datetime
+import matplotlib.pyplot as plt
 
 
-def read_info(name):
-    all_data = []
-    with open(name, encoding='UTF-8') as f:
-        while True:
-            content = f.readline()
-            if not content:
-                break
-            all_data += [content]
+days = []  # массив дат прошедшей недели
+t = datetime.datetime.now()
+for i in range(7):
+    days.append(t.strftime('%Y-%m-%d'))  # формат необходимый для запроса на API
+    t += datetime.timedelta(days=-1)
+days.reverse()
 
+# начальный набор курсов рубля за неделю
 
-files = ['file 1.txt', 'file 2.txt', 'file 3.txt', 'file 4.txt']
+cur = [1, 1, 1, 1, 1, 1, 1]
 
-if __name__ == '__main__':
-    start = datetime.now()
-    # последовательный запуск:
+# обращаемся к ресурсу
 
-    # for f in files:
-    #     read_info(f)
+with open('.env-11-1', 'r', encoding='UTF-8') as f:
+    app_id = f.readline() #типа токен
+headers = {"accept": "application/json"}
 
-    # запуск 4 процессов параллельно:
+''' образец ответа
+{
+    disclaimer: "Usage subject to terms: https://openexchangerates.org/terms",
+    license: "https://openexchangerates.org/license",
+    timestamp: 1341936000,
+    base: "USD",
+    rates: {
+        AED: 3.672914,
+        AFN: 48.337601,
+        ALL: 111.863334
+        /* ... */
+    }
+}
 
-    with Pool(processes=4) as pool:
-        pool.map(read_info, files)
+'''
+base = "USD"
 
-    end = datetime.now()
-    print('время', end - start)
+for i, day in enumerate(days):
+    url = f"https://openexchangerates.org/api/historical/{day}.json?app_id={app_id}"
+    try:
+        response = requests.get(url, headers=headers)
+
+    except  Exception as e:
+        print('request error')
+        print(e)
+    else:
+
+        cur[i] = response.json()['rates']['RUB']
+        base = response.json()['base']
+
+# переформатируем дату чтобы лучше влезала на картинку
+days = list(map(lambda day: day[5:].replace('-', '.'), days))
+
+fig, ax = plt.subplots()  # Create a figure containing a single Axes.
+ax.set_title(f"Курс рубля к {base} за прошедшую неделю")
+ax.plot(days, cur)  # Plot some data on the Axes.
+plt.show()  # Show the figure.
